@@ -33,7 +33,7 @@ dependencies {
 }
 
 group = 'com.jonahseguin'
-version = '1.5.1'
+version = '1.5.2'
 description = 'drink'
 java.sourceCompatibility = JavaVersion.VERSION_17
 

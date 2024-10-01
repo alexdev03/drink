@@ -31,6 +31,11 @@ public class Drink extends JavaPlugin {
         return services.computeIfAbsent(javaPlugin.getName(), name -> new DrinkCommandService(javaPlugin));
     }
 
+    public static void unregister(@Nonnull JavaPlugin javaPlugin) {
+        Preconditions.checkNotNull(javaPlugin, "JavaPlugin cannot be null");
+        services.remove(javaPlugin.getName());
+    }
+
     @Override
     public void onEnable() {
 
