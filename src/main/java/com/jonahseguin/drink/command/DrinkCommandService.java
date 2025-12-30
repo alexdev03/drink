@@ -158,7 +158,7 @@ public class DrinkCommandService implements CommandService {
         Preconditions.checkNotNull(args, "Args cannot be null");
         if (authorizer.isAuthorized(sender, command, label)) {
             if (command.isRequiresAsync()) {
-                plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> finishExecution(sender, command, label, args));
+                plugin.getServer().getAsyncScheduler().runNow(plugin, (task) -> finishExecution(sender, command, label, args));
             } else {
                 finishExecution(sender, command, label, args);
             }
